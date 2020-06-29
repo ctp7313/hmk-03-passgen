@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Password Generator</title>
+</head>
+<body>
+ 
+    <script>
+        /
+        var generatedPass = "";
+        // var grp = {
+        //     alpha: "abcdefghijklmnopqrstuvwxyz",
+        //     num: "0123456789",
+        //     spec: " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+        // };
+
+        //Prompt determining what length the password will be.
+        var passLength = prompt("How long would you like your password? Please select a number from 8-128.");
+        
+        //Commented out below was a while loop. Not sure if that was the direction to go but I figured if I could clear or start with no value for passLength,
+        //then maybe I could get the loop to start over should the user put in incorrect values.
+        // while (passLength !== null) {
+            // passLength = prompt("How long would you like your password? Please select a number from 8-128.");
+        
+            //Determines if the password meets the needs to be between 8-128 characters. I was able to get this work properly and then kick off the following oncfirms.
+            if (passLength > 7 && passLength < 129) {
+                alert("Great! Let's get started with you " + passLength + " character long password.");
+                console.log(this.passLength)
+            }
+            //I intended to have this alert pop up and then bring back passLength's prompt but it kept proceeding to the next confirms. Why?
+            else {
+                alert("Please choose a password length from 8-128 characters.");
+            }
+        // };
+
+        //The following confirms were take the true/false choices made by the user and somehow take the values in grp.alpha and so forth to concatenate them together to great one large string
+        //and then randomize according to passLength as generatedPass.
+        //Next would be to do a prevent default so the generated password would stay up for the user to then copy.
+        var confirmUpper = confirm("Would you like to use upper case letters?")
+        var confirmLower = confirm("Would you like to use lower case letters?")
+        var confirmSpec = confirm("Would you like to use special characters?")
+        var confirmNum = confirm("Would you like to use numbers?")
+
+
+    </script>
+
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
